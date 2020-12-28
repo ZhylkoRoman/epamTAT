@@ -50,6 +50,6 @@ public class OzbyTest {
                 .openProfilePage()
                 .openChangePasswordPage()
                 .fillChangePasswordInputs(password, password);
-        Assert.assertEquals("Вход", loginPage.getLoginHeader());
+        Assert.assertEquals("email", loginPage.chooseInputByEmail().getInputType());
     }
 }

@@ -22,9 +22,6 @@ public class LoginPage{
         this.driver = driver;
     }
 
-    @FindBy(id = "loginPopupIntro")
-    private WebElement loginHeader;
-
     @FindBy(id = "loginFormLoginEmailLink")
     private WebElement emailClick;
 
@@ -70,8 +67,8 @@ public class LoginPage{
         return userName.getText();
     }
 
-    public String getLoginHeader() {
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"loginPopupIntro\"]")));
-        return loginHeader.getText();
+    public String getInputType() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='i-input i-input_full-width i-popup__input'][1]")));
+        return emailField.getAttribute("type");
     }
 }
